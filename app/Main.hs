@@ -14,6 +14,7 @@ import qualified Problem29
 import qualified Problem33
 import qualified Problem34
 import qualified Problem37
+import qualified Problem39
 import qualified Problem40
 import qualified Problem46
 import ProblemLoader
@@ -25,7 +26,7 @@ import System.Environment (getArgs)
 solutions :: Map.Map Int Int
 solutions =
   $( loadNumberedMap
-       [19, 24, 26, 27, 28, 29, 33, 34, 37, 40, 46] -- you control this list
+       [19, 24, 26, 27, 28, 29, 33, 34, 37, 39, 40, 46] -- you control this list
    )
 
 main :: IO ()
