@@ -32,5 +32,5 @@ countAllSolutions xs =
       countSolutions per p = length (filter (\x -> p `rem` x == 0) per)
    in map (countSolutions perimeters) xs
 
-solution :: Int
-solution = fst (maximumBy (\x y -> compare (snd x) (snd y)) (zip [1 .. 1000] $ countAllSolutions [1 .. 1000]))
+solution :: IO Int
+solution = pure (fst (maximumBy (\x y -> compare (snd x) (snd y)) (zip [1 .. 1000] $ countAllSolutions [1 .. 1000])))

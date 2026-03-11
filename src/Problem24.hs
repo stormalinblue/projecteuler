@@ -25,5 +25,5 @@ nthPerm n seq =
 oneBasedNthPerm :: Int -> [a] -> [a]
 oneBasedNthPerm i = nthPerm (i - 1)
 
-solution :: Int
-solution = fromIntegral $ glueDigits (oneBasedNthPerm million [0 .. 9])
+solution :: IO Int
+solution = pure $ fromIntegral $ glueDigits (oneBasedNthPerm million [0 .. 9])

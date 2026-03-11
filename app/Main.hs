@@ -23,10 +23,10 @@ import System.Environment (getArgs)
 -- Automatically generate:
 --   import qualified ProblemX
 --   Map.fromList [(1, Problem1.solution), (2, Problem2.solution), ...]
-solutions :: Map.Map Int Int
+solutions :: Map.Map Int (IO Int)
 solutions =
   $( loadNumberedMap
-       [19, 24, 26, 27, 28, 29, 33, 34, 37, 39, 40, 46] -- you control this list
+       [19, 24, 26, 27, 28, 29, 33, 34, 37, 39, 40, 46]
    )
 
 main :: IO ()
@@ -37,7 +37,7 @@ main = do
       case reads nStr of
         [(n, "")] ->
           case Map.lookup n solutions of
-            Just sol -> print sol
+            Just sol -> sol >>= print
             Nothing -> putStrLn "No such problem number."
         _ -> putStrLn "Argument must be an integer."
     _ -> putStrLn "Usage: program <problem-number>"

@@ -1,13 +1,13 @@
-module Problem40 (
-    champernowneDigits,
+module Problem40
+  ( champernowneDigits,
     rawSolution,
-    solution
-)
+    solution,
+  )
 where
 
 champernowneDigits :: [Char]
 champernowneDigits =
-    concatMap show [(1::Int)..]
+  concatMap show [(1 :: Int) ..]
 
 toNum :: Char -> Int
 toNum '1' = 1
@@ -23,7 +23,7 @@ toNum '0' = 0
 toNum _ = error "Unrecognized"
 
 rawSolution :: [Int]
-rawSolution =  [toNum (champernowneDigits !! (i - 1)) | i <- [1, 10, 100, 1000, 10000, 100000, 1000000]]
+rawSolution = [toNum (champernowneDigits !! (i - 1)) | i <- [1, 10, 100, 1000, 10000, 100000, 1000000]]
 
-solution :: Int
-solution = product rawSolution
+solution :: IO Int
+solution = pure (product rawSolution)

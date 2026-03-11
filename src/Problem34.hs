@@ -42,5 +42,5 @@ rawSolution =
       f c = countDigits c == countDigits (sumFactorialDigits c)
    in dropWhile (<= 2) $ map (sum . map digitFact) (filter f combos)
 
-solution :: Int
-solution = sum rawSolution
+solution :: IO Int
+solution = pure (sum rawSolution)

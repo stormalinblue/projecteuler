@@ -35,5 +35,5 @@ lowestTermsDen =
       common = gcd numeratorProduct denominatorProduct
    in (denominatorProduct `div` common)
 
-solution :: Int
-solution = fromIntegral lowestTermsDen
+solution :: IO Int
+solution = pure (fromIntegral lowestTermsDen)

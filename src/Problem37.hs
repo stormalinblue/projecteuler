@@ -11,7 +11,8 @@ rightTruncWithDigits n =
 rightTruncStep :: (Integral a, Integral b) => (b, [a]) -> (b, [a])
 rightTruncStep (n, xs) =
   (n + 1, allPrimesIn [x * 10 + d | x <- xs, d <- [1, 3, 7, 9]])
-{- 
+
+{-
 leftTruncWithDigits :: Int -> [Int]
 leftTruncWithDigits 1 = [2, 3, 5, 7]
 leftTruncWithDigits n =
@@ -28,11 +29,11 @@ rightTruncPrimes :: [Int]
 rightTruncPrimes = concat $ takeWhile (not . null) (map snd (iterate rightTruncStep (2 :: Int, [2, 3, 5, 7])))
 
 rawSolution :: [Int]
-rawSolution = let
-    relRightTruncPrimes = dropWhile (< 10) rightTruncPrimes
-    maxRightTruncPrime = maximum relRightTruncPrimes
-    relLeftTruncPrimes = (dropWhile (< 10) . takeWhile (<= maxRightTruncPrime)) leftTruncPrimes
-    in isect relLeftTruncPrimes relRightTruncPrimes
+rawSolution =
+  let relRightTruncPrimes = dropWhile (< 10) rightTruncPrimes
+      maxRightTruncPrime = maximum relRightTruncPrimes
+      relLeftTruncPrimes = (dropWhile (< 10) . takeWhile (<= maxRightTruncPrime)) leftTruncPrimes
+   in isect relLeftTruncPrimes relRightTruncPrimes
 
-solution :: Int
-solution = sum rawSolution
+solution :: IO Int
+solution = pure (sum rawSolution)

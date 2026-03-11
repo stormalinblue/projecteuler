@@ -11,5 +11,5 @@ goldbachDecomposition a =
 rawSolution :: (Int, Maybe (Int, Int))
 rawSolution = head (filter (isNothing . snd) (map (\x -> (x, goldbachDecomposition x)) [3, 5 ..]))
 
-solution :: Int
-solution = fst rawSolution
+solution :: IO Int
+solution = pure (fst rawSolution)
