@@ -18,6 +18,9 @@ build-type:     Simple
 extra-source-files:
     README.md
     CHANGELOG.md
+data-files:
+    assets/11/input.txt
+    assets/18/input.txt
 
 source-repository head
   type: git
@@ -27,6 +30,7 @@ library
   exposed-modules:
       Lib
       Problem1
+      Problem11
       Problem19
       Problem24
       Problem26
@@ -40,6 +44,8 @@ library
       Problem40
       Problem46
       ProblemLoader
+      Util.Arr2D
+      Util.Data
       Util.Numbers
   other-modules:
       Paths_projecteuler
@@ -52,7 +58,9 @@ library
       base >=4.7 && <5
     , containers
     , data-ordlist
+    , repa
     , template-haskell
+    , text
   default-language: Haskell2010
 
 executable projecteuler-exe
@@ -69,7 +77,9 @@ executable projecteuler-exe
     , containers
     , data-ordlist
     , projecteuler
+    , repa
     , template-haskell
+    , text
   default-language: Haskell2010
 
 test-suite projecteuler-test
@@ -87,5 +97,7 @@ test-suite projecteuler-test
     , containers
     , data-ordlist
     , projecteuler
+    , repa
     , template-haskell
+    , text
   default-language: Haskell2010
