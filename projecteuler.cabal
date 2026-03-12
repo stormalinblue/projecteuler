@@ -21,6 +21,7 @@ extra-source-files:
 data-files:
     assets/11/input.txt
     assets/18/input.txt
+    assets/22/input.txt
 
 source-repository head
   type: git
@@ -32,6 +33,7 @@ library
       Problem1
       Problem11
       Problem19
+      Problem22
       Problem24
       Problem26
       Problem27
