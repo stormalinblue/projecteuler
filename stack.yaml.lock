@@ -11,6 +11,13 @@ packages:
       size: 2965
   original:
     hackage: repa-3.4.2.0@sha256:7fc52911966c64cc1676843f5fee1777931d0161e2e55581bf925feac4ac30c2,3694
+- completed:
+    hackage: blaze-html-0.9.1.2@sha256:2e40ad3828320b72122f09754091fb686fa0fd4c083769f17ef84584972ec450,3020
+    pantry-tree:
+      sha256: ab0c6aad7511b73a15fa67c21d8b2e7c2028b9ab13cb5d69e7c08f2d4e375e9e
+      size: 2227
+  original:
+    hackage: blaze-html-0.9.1.2@sha256:2e40ad3828320b72122f09754091fb686fa0fd4c083769f17ef84584972ec450,3020
 snapshots:
 - completed:
     sha256: 238fa745b64f91184f9aa518fe04bdde6552533d169b0da5256670df83a0f1a9

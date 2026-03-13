@@ -19,7 +19,7 @@ parseInput input =
    in names
 
 pureSolution :: Text -> Int
-pureSolution input = sum $ zipWith (*) [1 ..] (map nameValue (sort names))
+pureSolution input = sum products
   where
     names = parseInput input
     products = zipWith (*) [1 ..] (map nameValue (sort names))

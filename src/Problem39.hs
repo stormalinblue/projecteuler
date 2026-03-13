@@ -1,4 +1,4 @@
-module Problem39 (solution) where
+module Problem39 (solution, allPrimitiveTriplets) where
 
 {-
     Assuming (I haven't proved it myself) that Pythagorean triplet trees only grow the perimeter,
@@ -24,7 +24,7 @@ allPrimitiveTriplets :: [(Int, Int, Int)]
 allPrimitiveTriplets = filteredPrimitiveTriplets $ const True
 
 primitiveTriplesBelow :: Int -> [(Int, Int, Int)]
-primitiveTriplesBelow n = filteredPrimitiveTriplets $ (\(a, b, c) -> (a + b + c) <= n)
+primitiveTriplesBelow n = filteredPrimitiveTriplets (\(a, b, c) -> (a + b + c) <= n)
 
 countAllSolutions :: [Int] -> [Int]
 countAllSolutions xs =

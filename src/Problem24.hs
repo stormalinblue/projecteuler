@@ -19,7 +19,7 @@ nthPerm n seq =
       p = n `div` f
       r = n `rem` f
 
-      (before, a@(pos : after)) = splitAt p seq
+      (before, pos : after) = splitAt p seq
    in pos : nthPerm r (before ++ after)
 
 oneBasedNthPerm :: Int -> [a] -> [a]
