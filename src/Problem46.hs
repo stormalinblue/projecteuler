@@ -1,7 +1,7 @@
 module Problem46 (goldbachDecomposition, rawSolution, solution) where
 
 import Data.Maybe (isNothing)
-import Util.Numbers (isPrime)
+import Util.Primes (isPrime)
 
 goldbachDecomposition :: Int -> Maybe (Int, Int)
 goldbachDecomposition a =

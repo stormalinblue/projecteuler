@@ -1,7 +1,7 @@
 module Problem37 (solution, rawSolution, leftTruncPrimes, rightTruncPrimes) where
 
 import Data.List.Ordered (isect)
-import Util.Numbers (allPrimesIn)
+import Util.Primes (allPrimesIn)
 
 {- rightTruncWithDigits :: Int -> [Int]
 rightTruncWithDigits 1 = [2, 3, 5, 7]

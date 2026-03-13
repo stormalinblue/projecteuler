@@ -31,6 +31,7 @@ library
   exposed-modules:
       Lib
       Problem1
+      Problem2
       Problem11
       Problem19
       Problem22
@@ -49,6 +50,8 @@ library
       Util.Arr2D
       Util.Data
       Util.Numbers
+      Util.Primes
+      Util.Sequence
   other-modules:
       Paths_projecteuler
   autogen-modules:

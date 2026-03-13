@@ -1,8 +1,9 @@
-module Problem27 (divisible, isPrime, genPrimes, genQuadratic, rawSolution, solution) where
+module Problem27 (divisible, genPrimes, genQuadratic, rawSolution, solution) where
 
 import Data.Function (on)
 import Data.List (maximumBy)
-import Util.Numbers (divisible, isPrime)
+import Util.Numbers (divisible)
+import Util.Primes (isPrime)
 
 genQuadratic :: (Integral a) => a -> a -> [a]
 genQuadratic a b = [(x * x) + (x * a) + b | x <- [0 ..]]
