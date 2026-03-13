@@ -1,4 +1,4 @@
-module Problem28 (solution, coins, numChange) where
+module Problem31 (solution, coins, numChange) where
 
 numChange :: Int -> [Int] -> Int
 numChange 0 _ = 1

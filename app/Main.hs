@@ -14,8 +14,8 @@ import qualified Problem23
 import qualified Problem24
 import qualified Problem26
 import qualified Problem27
-import qualified Problem28
 import qualified Problem29
+import qualified Problem31
 import qualified Problem33
 import qualified Problem34
 import qualified Problem37
@@ -31,7 +31,7 @@ import System.Environment (getArgs)
 solutions :: Map.Map Int (IO Int)
 solutions =
   $( loadNumberedMap
-       [1, 2, 11, 19, 22, 23, 24, 26, 27, 28, 29, 33, 34, 37, 39, 40, 46]
+       [1, 2, 11, 19, 22, 23, 24, 26, 27, 29, 31, 33, 34, 37, 39, 40, 46]
    )
 
 main :: IO ()
