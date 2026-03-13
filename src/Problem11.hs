@@ -1,8 +1,6 @@
 module Problem11 (solution) where
 
-import Data.Array.Repa (Z (..), (:.) (..))
 import Data.Text (Text, lines, strip, unpack, words)
-import Debug.Trace (trace)
 import Util.Arr2D
 import Util.Data (getProblemInput)
 import Prelude hiding (lines, words)
