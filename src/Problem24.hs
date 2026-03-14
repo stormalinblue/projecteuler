@@ -1,6 +1,6 @@
 module Problem24 (solution) where
 
-import Util.Numbers (glueDigits)
+import Util.Numbers (Digits (..))
 import Prelude hiding (seq)
 
 million :: Int
@@ -26,4 +26,4 @@ oneBasedNthPerm :: Int -> [a] -> [a]
 oneBasedNthPerm i = nthPerm (i - 1)
 
 solution :: IO Int
-solution = pure $ fromIntegral $ glueDigits (oneBasedNthPerm million [0 .. 9])
+solution = pure $ glueDigits (oneBasedNthPerm million [0 .. 9])

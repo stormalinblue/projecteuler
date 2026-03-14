@@ -3,7 +3,6 @@ module Util.Numbers
     factorial,
     Digits (..),
     singleDigits,
-    glueDigits,
   )
 where
 
@@ -21,12 +20,16 @@ class (Integral a) => Digits a where
   digits :: a -> [Int]
   digits = reverse . revDigits
 
+  glueDigits :: [Int] -> a
+
 instance Digits Integer where
   revDigits 0 = [0]
   revDigits n =
     let revDigitsPos 0 = []
         revDigitsPos x = fromInteger (x `rem` 10) : revDigitsPos (x `div` 10)
      in revDigitsPos n
+
+  glueDigits = foldl (\x y -> x * 10 + toInteger y) 0
 
 instance Digits Int where
   revDigits 0 = [0]
@@ -35,8 +38,7 @@ instance Digits Int where
         revDigitsPos x = x `rem` 10 : revDigitsPos (x `div` 10)
      in revDigitsPos n
 
+  glueDigits = foldl (\x y -> x * 10 + y) 0
+
 singleDigits :: [Int]
 singleDigits = [0 .. 9]
-
-glueDigits :: [Int] -> Integer
-glueDigits = foldl (\x y -> x * 10 + toInteger y) 0
