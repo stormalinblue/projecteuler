@@ -48,8 +48,10 @@ library
       Problem34
       Problem37
       Problem39
+      Problem4
       Problem40
       Problem46
+      Problem50
       ProblemLoader
       Util.Arr2D
       Util.Data
