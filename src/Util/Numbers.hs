@@ -20,6 +20,10 @@ class (Integral a) => Digits a where
   digits :: a -> [Int]
   digits = reverse . revDigits
 
+  revBinDigits :: a -> [Int]
+  binDigits :: a -> [Int]
+  binDigits = reverse . revBinDigits
+
   glueDigits :: [Int] -> a
 
 instance Digits Integer where
@@ -29,6 +33,12 @@ instance Digits Integer where
         revDigitsPos x = fromInteger (x `rem` 10) : revDigitsPos (x `div` 10)
      in revDigitsPos n
 
+  revBinDigits 0 = [0]
+  revBinDigits n =
+    let revBinDigitsPos 0 = []
+        revBinDigitsPos x = fromInteger (x `rem` 2) : revBinDigitsPos (x `div` 2)
+     in revBinDigitsPos n
+
   glueDigits = foldl (\x y -> x * 10 + toInteger y) 0
 
 instance Digits Int where
@@ -37,6 +47,12 @@ instance Digits Int where
     let revDigitsPos 0 = []
         revDigitsPos x = x `rem` 10 : revDigitsPos (x `div` 10)
      in revDigitsPos n
+
+  revBinDigits 0 = [0]
+  revBinDigits n =
+    let revBinDigitsPos 0 = []
+        revBinDigitsPos x = (x `rem` 2) : revBinDigitsPos (x `div` 2)
+     in revBinDigitsPos n
 
   glueDigits = foldl (\x y -> x * 10 + y) 0
 
