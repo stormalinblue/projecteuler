@@ -1,4 +1,4 @@
-module Problem35 (solution, circles) where
+module Problem35 (solution) where
 
 import Data.List (inits, tails)
 import qualified Data.Set as Set
